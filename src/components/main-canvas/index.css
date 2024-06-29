@@ -1,0 +1,6 @@
+.main-canvas {
+    width: 70%;
+    background-color: hsl(from var(--primary) h s calc(l - 5));
+    height: 100%;
+    color: var(--ternary);
+}

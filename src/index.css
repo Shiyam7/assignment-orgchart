@@ -20,6 +20,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary: #222831;
+  --secondary: #393E46;
+  --tertiary: #00ADB5;
+  --ternary: #EEEEEE;
+
+  --font-regular: "Poppins-regular";
+  --font-bold: "Poppins-semibold";
+  --box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  --space: 10px
+
 }
 
 
