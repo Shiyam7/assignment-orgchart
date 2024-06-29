@@ -1,0 +1,6 @@
+.side-bar {
+    width: 30%;
+    background-color: var(--primary);
+    height: 100%;
+    color: var(--ternary);
+}

@@ -2,7 +2,7 @@ import React from "react";
 
 export interface DefaultProps {
     TestId: string;
-    Style: Object;
+    Style: React.CSSProperties;
     ClassName: string[];
-    Children: React.ElementType[];
+    Children: React.ReactNode;
 }

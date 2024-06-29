@@ -1,4 +1,24 @@
-h1 {
-  font-family: "Poppins-semibold";
-  color: blue;
+.container {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary);
+}
+
+.container main {
+  display: flex;
+  justify-content: space-around;
+  height: calc(100dvh - 80px);
+}
+
+.container footer {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--tertiary);
+  padding: var(--space);
+  background-color: var(--primary);
 }
