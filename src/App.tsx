@@ -1,12 +1,12 @@
-import React from 'react';
+import NavBar from './components/navbar';
 import './App.css';
 
 function App() {
   return (
-   <div>
-      <h1>Org Chart</h1>
+   <div className='container'>
+      <NavBar/>
       <div>
-        Its working.
+        body
       </div>
    </div>
   );

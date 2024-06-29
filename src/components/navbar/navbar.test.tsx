@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import NavBar from './index';
 
 test('renders learn react link', () => {
-  render(<App />);
-  const text = screen.getByText(/Org Chart/i);
+  render(<NavBar />);
+  const text = screen.getByText(/NavBar/i);
   expect(text).toBeInTheDocument();
 });
