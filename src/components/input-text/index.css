@@ -12,6 +12,7 @@
     background-color: var(--primary);
     border-style: solid;
     border-radius: 30px;
+    border-width: 1px;
 }
 
 .input-text input {

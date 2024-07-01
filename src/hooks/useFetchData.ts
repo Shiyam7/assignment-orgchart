@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import { useAtom } from "jotai";
-import { employeeAtom } from "../services/atoms";
+import { employeesAtom } from "../services/atoms";
 import API from "../services/api";
 import { AxiosResponse } from "axios";
 
 const useFectchData = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const [data, setData] = useAtom(employeeAtom);
+    const [data, setData] = useAtom(employeesAtom);
     const [error, setError] = useState<any>(null);
 
 

@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 import { useAtom } from "jotai";
 import useFectchData from "./useFetchData"
-import { SelectedTeamAtom, employeeFilteredAtom, searchAtom } from "../services/atoms";
-import { Option, Employee, matchFilter } from "../utils";
+import { SelectedTeamAtom, employeeAtom, employeeFilteredAtom, relationAtom, searchAtom } from "../services/atoms";
+import { Option, Employee, matchFilter, buildEmployeeTree } from "../utils";
 
 const useEmployee = () => {
 
     const [searchText, setSearchText] = useAtom(searchAtom);
     const [selectedTeam, setSelctedTeam] = useAtom(SelectedTeamAtom);
-
+    const [filterdData, setFilteredData] = useAtom(employeeFilteredAtom);
+    const [selectedEmployee, setSelectedEmployee] = useAtom(employeeAtom);
+    const [relation, setRelation] = useAtom(relationAtom);
+    
     const [options, setOptions] = useState<Option[]>([]);
-
     
     const {isLoading, data, error } = useFectchData();
 
-    const [filterdData, setFilteredData] = useAtom(employeeFilteredAtom);
 
     useEffect(() => {
         if(data.length > 0){
@@ -26,8 +27,26 @@ const useEmployee = () => {
                 return prev;
             }, []);
             setOptions(mappedOptions);
+            setSelectedEmployee(data[0]);
+            
         }
     }, [data])
+
+    useEffect(() => {
+        if(data.length > 0 && selectedEmployee) {
+            if(selectedEmployee.manager === ""){
+                const relation = buildEmployeeTree(data);
+                console.log(relation)
+                setRelation(relation);
+            }
+            else {
+                const employess = [selectedEmployee, ...data.filter(el => el.manager === Number(selectedEmployee.id))];
+                const relation = buildEmployeeTree(employess);
+                console.log(relation)
+                setRelation(relation);
+            }
+        }
+    }, [data, selectedEmployee, setRelation])
 
     useEffect(() => {
         if(data.length > 0) {
@@ -51,11 +70,14 @@ const useEmployee = () => {
         filters: {
             searchText,
             selectedTeam,
-            filterdData
+            selectedEmployee,
+            filterdData,
+            relation
         },
         mutate: {
             setSearchText,
-            setSelctedTeam
+            setSelctedTeam,
+            setSelectedEmployee
         }
     }
 }
