@@ -7,6 +7,6 @@ export const SelectedTeamAtom = atom<String | undefined | null>('');
 export const employeesAtom = atom<Employee[]>([]);
 export const employeeFilteredAtom = atom<Employee[]>([]);
 export const employeeAtom = atom<Employee | null>(null)
-export const relationAtom = atom<EmployeeNode[]>([])
+export const relationAtom = atom<EmployeeNode | null>(null)
 
 

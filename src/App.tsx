@@ -15,9 +15,6 @@ function App() {
         <SideBar/>
         <MainCanvas/>
       </main>
-      <footer>
-        <div>Made with ❤️ by Shiyam</div>
-      </footer>
       <ToastContainer position='top-right' />
    </div>
   );
