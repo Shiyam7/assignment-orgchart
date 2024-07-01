@@ -62,7 +62,7 @@ const useEmployee = () => {
                 setRelation(node)
             }
         }
-    }, [selectedEmployee, setRelation])
+    }, [data,selectedEmployee, setRelation])
 
     useEffect(() => {
         if (data.length > 0) {
