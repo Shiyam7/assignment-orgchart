@@ -1,85 +1,105 @@
-import { useEffect, useState } from "react";
-import { useAtom } from "jotai";
-import useFectchData from "./useFetchData"
-import { SelectedTeamAtom, employeeAtom, employeeFilteredAtom, relationAtom, searchAtom } from "../services/atoms";
-import { Option, Employee, matchFilter, buildEmployeeTree } from "../utils";
+import { useEffect, useState } from 'react'
+import { useAtom } from 'jotai'
+import useFectchData from './useFetchData'
+import {
+    SelectedTeamAtom,
+    employeeAtom,
+    employeeFilteredAtom,
+    relationAtom,
+    searchAtom,
+} from '../services/atoms'
+import {
+    Option,
+    Employee,
+    matchFilter,
+    buildEmployeeTree,
+    findEmployee,
+} from '../utils'
 
 const useEmployee = () => {
+    const [searchText, setSearchText] = useAtom(searchAtom)
+    const [selectedTeam, setSelctedTeam] = useAtom(SelectedTeamAtom)
+    const [filterdData, setFilteredData] = useAtom(employeeFilteredAtom)
+    const [selectedEmployee, setSelectedEmployee] = useAtom(employeeAtom)
+    const [relation, setRelation] = useAtom(relationAtom)
 
-    const [searchText, setSearchText] = useAtom(searchAtom);
-    const [selectedTeam, setSelctedTeam] = useAtom(SelectedTeamAtom);
-    const [filterdData, setFilteredData] = useAtom(employeeFilteredAtom);
-    const [selectedEmployee, setSelectedEmployee] = useAtom(employeeAtom);
-    const [relation, setRelation] = useAtom(relationAtom);
-    
-    const [options, setOptions] = useState<Option[]>([]);
-    
-    const {isLoading, data, error } = useFectchData();
+    const [options, setOptions] = useState<Option[]>([])
 
+    const { isLoading, data, error } = useFectchData()
 
     useEffect(() => {
-        if(data.length > 0){
-            const mappedOptions = data.reduce((prev: Option[], current: Employee) => {
-                const values = prev.map(vl => vl.value.toLocaleLowerCase())
-                if(values.indexOf(current.team.toLocaleLowerCase()) === -1){
-                    prev.push({ value: current.team.toLocaleLowerCase(), label: current.team})
-                }
-                return prev;
-            }, []);
-            setOptions(mappedOptions);
-            setSelectedEmployee(data[0]);
-            
+        if (data.length > 0) {
+            const mappedOptions = data.reduce(
+                (prev: Option[], current: Employee) => {
+                    const values = prev.map((vl) =>
+                        vl.value.toLocaleLowerCase()
+                    )
+                    if (
+                        values.indexOf(current.team.toLocaleLowerCase()) === -1
+                    ) {
+                        prev.push({
+                            value: current.team.toLocaleLowerCase(),
+                            label: current.team,
+                        })
+                    }
+                    return prev
+                },
+                []
+            )
+
+            setOptions(mappedOptions)
+            const [first] = data
+            setSelectedEmployee(first)
         }
-    }, [data,setSelectedEmployee])
+    }, [data, setSelectedEmployee, setRelation])
 
     useEffect(() => {
-        if(data.length > 0 && selectedEmployee) {
-            if(selectedEmployee.manager === ""){
-                const relation = buildEmployeeTree(data);
-                console.log(relation)
-                setRelation(relation);
-            }
-            else {
-                const employess = [selectedEmployee, ...data.filter(el => el.manager === Number(selectedEmployee.id))];
-                const relation = buildEmployeeTree(employess);
-                console.log(relation)
-                setRelation(relation);
+        if (data.length > 0 && selectedEmployee) {
+            const relation = buildEmployeeTree(data)
+            const [root] = relation
+            const node = findEmployee(root, Number(selectedEmployee.id))
+            if (node) {
+                setRelation(node)
             }
         }
-    }, [data, selectedEmployee, setRelation])
+    }, [data,selectedEmployee, setRelation])
 
     useEffect(() => {
-        if(data.length > 0) {
-            let copyData = [...data];
+        if (data.length > 0) {
+            let copyData = [...data]
 
-            if(selectedTeam !== null && selectedTeam !== ''){
-                copyData = copyData.filter((vl) => vl.team.toLocaleLowerCase() === selectedTeam);
+            if (selectedTeam !== null && selectedTeam !== '') {
+                copyData = copyData.filter(
+                    (vl) => vl.team.toLocaleLowerCase() === selectedTeam
+                )
             }
 
-            if(searchText !== null && searchText !== ''){
-                copyData = matchFilter(copyData, searchText);
+            if (searchText !== null && searchText !== '') {
+                copyData = matchFilter(copyData, searchText)
             }
 
-            setFilteredData(copyData);
+            setFilteredData(copyData)
         }
-
-    }, [ searchText, selectedTeam,data, setFilteredData])
+    }, [searchText, selectedTeam, data, setFilteredData])
 
     return {
-        isLoading, error, data, options, 
+        isLoading,
+        error,
+        data,
+        options,
         filters: {
             searchText,
             selectedTeam,
             selectedEmployee,
             filterdData,
-            relation
+            relation,
         },
         mutate: {
             setSearchText,
             setSelctedTeam,
-            setSelectedEmployee
-        }
+            setSelectedEmployee,
+        },
     }
 }
 
-export default useEmployee;
+export default useEmployee

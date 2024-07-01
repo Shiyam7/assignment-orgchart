@@ -3,66 +3,17 @@
     height: 100%;
     color: var(--ternary);
     background-image: url('../../assets/grid.svg');
-    /* background-size: cover; */
-    background-color: white;
+    background-size: cover;
     overflow-x: auto;
     overflow-y: auto;
 }
 
-.org-tree {
-    padding: 2em;;
-}
 
-.org-tree li {
-    list-style: none;
-    /* text-align: center; */
-    float: left;
-    position: relative;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
 
-.org-tree li::before,
-.org-tree li::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 50%;
-  border-top: 1px solid var(--ternary);
-  width: 50%;
-  height: 10px;
-}
-.org-tree li::after {
-  right: auto;
-  left: 50%;
-  border-right: 1px solid var(--ternary);
-}
 
-.org-tree li.root:before, .org-tree li.root:after {
-    border: none;
-}
 
-.org-tree li:last-child::after {
-    border: 0 none;
-    border-top: none;
-  }
 
-/* .org-tree li:first-child::before,
-.org-tree li:last-child::after {
-  border: 0 none;
-}
 
-.org-tree li:last-child::before {
-    border-right: 1px solid #000;
-}
 
-.org-tree li:last-child::before {
-    border-radius: 0 5px 0 0;
-  }
-  .org-tree li:first-child::after {
-    border-radius: 5px 0 0 0;
-  }  */
+
+

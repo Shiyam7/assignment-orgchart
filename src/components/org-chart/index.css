@@ -1,0 +1,176 @@
+.org-chart {
+    padding: 2em;
+  }
+  
+  .org-chart .leaf {
+    display: inline-block;
+  }
+
+  .org-chart .root li.root-node {
+    display: inline-block;
+  }
+  
+  .org-chart ul.root {
+    padding-inline-start: 0;
+    margin: 0;
+  }
+  
+  .org-chart ul.child {
+    display: flex;
+    padding-inline-start: 0;
+    padding-top: 20px;
+    position: relative;
+  }
+  
+  .org-chart ul.child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    border-left: 1px solid #ccc;
+    height: 20px;
+  }
+  
+  .org-chart li {
+    list-style: none;
+    text-align: center;
+    position: relative;
+    padding-top: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .org-chart li.only-child {
+    padding-top: 0;
+  }
+  
+  .org-chart li::before, .org-chart li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 50%;
+    border-top: 1px solid #ccc;
+    height: 20px;
+  }
+  
+  .org-chart li::after {
+    left: 50%;
+    border-left: 1px solid #ccc;
+  }
+  
+  .org-chart .child li.first::before {
+    border: 0 none;
+  }
+  
+  .org-chart .child li.first::after {
+    border-radius: 5px 0 0 0;
+  }
+  
+  .org-chart .child li.last::before {
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+  }
+  
+  .org-chart .child li.last::after {
+    border: 0 none;
+  }
+
+  .org-chart .root li.root-node::after, .org-chart .root li.root-node::before {
+    border: 0 none;
+  }
+  
+
+/* .org-chart ul.tree {
+    padding-inline-start: 0;
+    margin: 0;
+    display: flex;
+
+    --line-height: 20px;
+    --line-width: 1px;
+    --line-color: #ccc;
+    --line-border-radius: 5pxs;
+    --line-style: solid;
+    --node-padding: 5px;
+
+    --tree-line-height: var(--line-height, 20px);
+    --tree-line-width: var(--line-width, 1px);
+    --tree-line-color: var(--line-color, black);
+    --tree-line-border-radius: var(--line-border-radius, 5px);
+    --tree-node-line-style: var(--line-style, solid);
+    --tree-node-padding: var(--node-padding, 5px);
+}
+
+.org-chart ul.tree .node {
+    flex: auto;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: var(--tree-line-height) var(--tree-node-padding) 0 var(--tree-node-padding);
+}
+
+.org-chart ul.tree .node .childrenContainer {
+    display: flex;
+    padding-inline-start: 0;
+    margin: 0;
+    padding-top: var(--tree-line-height);
+    position: relative;
+}
+
+.org-chart ul.tree .node .childrenContainer::efore {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: var(--tree-line-height);
+    box-sizing: border-box;
+    left: calc(50% - var(--tree-line-width) / 2);
+    width: 0;
+    border-left: var(--tree-line-width) var(--tree-node-line-style) var(--tree-line-color);
+}
+
+.org-chart ul.tree .node.nodeLines::before,
+.org-chart ul.tree .node.nodeLines::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: var(--tree-line-height);
+    box-sizing: border-box;
+    right: 50%;
+    width: 50%;
+    border-top: var(--tree-line-width) var(--tree-node-line-style) var(--tree-line-color);
+}
+
+.org-chart ul.tree .node.nodeLines::after {
+    left: 50%;
+    border-left: var(--tree-line-width) var(--tree-node-line-style) var(--tree-line-color);
+}
+
+
+.org-chart ul.tree .node.nodeLines:only-of-type {
+    padding: 0;
+}
+
+.org-chart ul.tree .node.nodeLines:only-of-type::after, .org-chart ul.tree .node.nodeLines:only-of-type::before {
+    display: none;
+}
+
+
+.org-chart ul.tree .node.nodeLines:first-of-type::before {
+    border: 0 none;
+}
+
+.org-chart ul.tree .node.nodeLines:first-of-type::after {
+    border-radius: var(--tree-line-border-radius) 0 0 0;
+}
+
+
+.org-chart ul.tree .node.nodeLines:last-of-type::before {
+    border-right: var(--tree-line-width) var(--tree-node-line-style) var(--tree-line-color);
+    border-radius: 0 var(--tree-line-border-radius) 0 0;
+}
+
+.org-chart ul.tree .node.nodeLines:last-of-type::after {
+    border: 0 none;
+} */
+
