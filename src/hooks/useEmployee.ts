@@ -30,7 +30,7 @@ const useEmployee = () => {
             setSelectedEmployee(data[0]);
             
         }
-    }, [data])
+    }, [data,setSelectedEmployee])
 
     useEffect(() => {
         if(data.length > 0 && selectedEmployee) {
