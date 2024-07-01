@@ -3,4 +3,11 @@
     background-color: var(--primary);
     height: 100%;
     color: var(--ternary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: var(--space);
+    padding-top: var(--space);
+    padding-bottom: var(--space);
+    align-items: center;
 }

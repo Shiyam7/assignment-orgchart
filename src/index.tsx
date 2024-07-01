@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { startMirage } from "./mirage"
+
+if (process.env.NODE_ENV === "development") {
+  startMirage()
+}
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

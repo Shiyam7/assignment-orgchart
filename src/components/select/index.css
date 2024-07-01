@@ -1,0 +1,14 @@
+.custom-select-container {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* .custom-select__control {
+    background-color: var(--primary) !important;
+    box-shadow: none;
+} */
+
+.custom-select__control:hover,.custom-select__control:focus {
+    border: 1px solid var(--ternary) !important;
+    box-shadow: none;
+} 

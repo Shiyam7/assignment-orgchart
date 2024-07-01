@@ -1,0 +1,27 @@
+.input-text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3em;
+    width: 100%;
+    max-width: 300px;
+    padding-left: var(--space);
+    padding-right: var(--space);
+    cursor: pointer;
+    background-color: var(--primary);
+    border-style: solid;
+    border-radius: 30px;
+}
+
+.input-text input {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--primary);
+    color: var(--ternary);
+    font-size: 1em;
+
+}

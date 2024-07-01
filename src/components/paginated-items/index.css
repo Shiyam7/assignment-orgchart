@@ -1,0 +1,34 @@
+.list-items {
+    padding: var(--space);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.paginate {
+    width: 100%;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.paginate ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.paginate li {
+    cursor: pointer;
+    /* border: 1px solid var(--ternary); */
+    padding: calc(var(--space) /3);
+}
+
+.paginate li.selected {
+    /* cursor: pointer; */
+    border: 1px solid var(--tertiary);
+    border-radius: 10px;
+    /* padding: calc(var(--space) /3); */
+}

@@ -1,0 +1,282 @@
+[
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "designation": "CEO",
+      "team": "Sales",
+      "manager": ""
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "designation": "COO",
+      "team": "Operations",
+      "manager": 1
+    },
+    {
+      "id": 3,
+      "name": "Carol Williams",
+      "designation": "CFO",
+      "team": "Finance",
+      "manager": 1
+    },
+    {
+      "id": 4,
+      "name": "David Brown",
+      "designation": "CTO",
+      "team": "Technology",
+      "manager": 1
+    },
+    {
+      "id": 5,
+      "name": "Rachel Taylor",
+      "designation": "CPO",
+      "team": "Product",
+      "manager": 1
+    },
+    {
+      "id": 6,
+      "name": "Ethan Clark",
+      "designation": "VP of Engineering",
+      "team": "Technology",
+      "manager": 4
+    },
+    {
+      "id": 7,
+      "name": "Fiona Harris",
+      "designation": "FE Lead",
+      "team": "Technology",
+      "manager": 6
+    },
+    {
+      "id": 8,
+      "name": "Jason Roberts",
+      "designation": "BE Lead",
+      "team": "Technology",
+      "manager": 6
+    },
+    {
+      "id": 9,
+      "name": "Nancy Lewis",
+      "designation": "DevOps Lead",
+      "team": "Technology",
+      "manager": 6
+    },
+    {
+      "id": 10,
+      "name": "Greg Davis",
+      "designation": "Sr. FE",
+      "team": "Technology",
+      "manager": 7
+    },
+    {
+      "id": 11,
+      "name": "Helen Miller",
+      "designation": "FE",
+      "team": "Technology",
+      "manager": 7
+    },
+    {
+      "id": 12,
+      "name": "Ian Wilson",
+      "designation": "Jr FE",
+      "team": "Technology",
+      "manager": 7
+    },
+    {
+      "id": 13,
+      "name": "Kevin Thompson",
+      "designation": "Sr. BE",
+      "team": "Technology",
+      "manager": 8
+    },
+    {
+      "id": 14,
+      "name": "Laura Walker",
+      "designation": "BE",
+      "team": "Technology",
+      "manager": 8
+    },
+    {
+      "id": 15,
+      "name": "Mark Young",
+      "designation": "Jr. BE",
+      "team": "Technology",
+      "manager": 8
+    },
+    {
+      "id": 16,
+      "name": "Oliver Scott",
+      "designation": "Sr. DevOps",
+      "team": "Technology",
+      "manager": 9
+    },
+    {
+      "id": 17,
+      "name": "Paula King",
+      "designation": "DevOps",
+      "team": "Technology",
+      "manager": 9
+    },
+    {
+      "id": 18,
+      "name": "Quentin Lopez",
+      "designation": "Jr. DevOps",
+      "team": "Technology",
+      "manager": 9
+    },
+    {
+      "id": 19,
+      "name": "Samuel Green",
+      "designation": "PM",
+      "team": "Product",
+      "manager": 5
+    },
+    {
+      "id": 20,
+      "name": "Theresa Baker",
+      "designation": "Associate PM",
+      "team": "Product",
+      "manager": 5
+    },
+    {
+      "id": 21,
+      "name": "Ursula Adams",
+      "designation": "Product Analyst",
+      "team": "Product",
+      "manager": 5
+    },
+    {
+      "id": 22,
+      "name": "Victor Martinez",
+      "designation": "Sales Officer",
+      "team": "Sales",
+      "manager": 1
+    },
+    {
+      "id": 23,
+      "name": "Wendy Cooper",
+      "designation": "Sales Manager",
+      "team": "Sales",
+      "manager": 22
+    },
+    {
+      "id": 24,
+      "name": "Xavier Evans",
+      "designation": "Sr. Sales",
+      "team": "Sales",
+      "manager": 23
+    },
+    {
+      "id": 25,
+      "name": "Yolanda Price",
+      "designation": "Sales Exec",
+      "team": "Sales",
+      "manager": 23
+    },
+    {
+      "id": 26,
+      "name": "Zach Collins",
+      "designation": "Jr. Sales Exec",
+      "team": "Sales",
+      "manager": 23
+    },
+    {
+      "id": 27,
+      "name": "Angela Ramirez",
+      "designation": "Marketing Officer",
+      "team": "Product",
+      "manager": 5
+    },
+    {
+      "id": 28,
+      "name": "Brandon Powell",
+      "designation": "Marketing Manager",
+      "team": "Product",
+      "manager": 27
+    },
+    {
+      "id": 29,
+      "name": "Cynthia Parker",
+      "designation": "Sr. Analyst",
+      "team": "Product",
+      "manager": 27
+    },
+    {
+      "id": 30,
+      "name": "Daniel Roger",
+      "designation": "Analyst",
+      "team": "Product",
+      "manager": 27
+    },
+    {
+      "id": 31,
+      "name": "Emma Phillips",
+      "designation": "Jr. Analyst",
+      "team": "Product",
+      "manager": 27
+    },
+    {
+      "id": 32,
+      "name": "Fiona Campbell",
+      "designation": "CHR",
+      "team": "Operations",
+      "manager": 2
+    },
+    {
+      "id": 33,
+      "name": "George Mitchell",
+      "designation": "HR Manager",
+      "team": "Operations",
+      "manager": 32
+    },
+    {
+      "id": 34,
+      "name": "Hannah Bell",
+      "designation": "Sr. HR",
+      "team": "Operations",
+      "manager": 33
+    },
+    {
+      "id": 35,
+      "name": "Ivan Murphy",
+      "designation": "HR",
+      "team": "Operations",
+      "manager": 33
+    },
+    {
+      "id": 36,
+      "name": "Julia Turner",
+      "designation": "Jr. HR",
+      "team": "Operations",
+      "manager": 33
+    },
+    {
+      "id": 37,
+      "name": "Karen Edwards",
+      "designation": "Finance Manager",
+      "team": "Finance",
+      "manager": 3
+    },
+    {
+      "id": 38,
+      "name": "Leo Foster",
+      "designation": "Sr. Accountant",
+      "team": "Finance",
+      "manager": 37
+    },
+    {
+      "id": 39,
+      "name": "Megan Gray",
+      "designation": "Accountant",
+      "team": "Finance",
+      "manager": 37
+    },
+    {
+      "id": 40,
+      "name": "Nathan Howard",
+      "designation": "Jr. Accountant",
+      "team": "Finance",
+      "manager": 37
+    }
+  ]

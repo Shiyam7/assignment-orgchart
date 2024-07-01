@@ -10,9 +10,15 @@
     "@types/node": "^16.18.101",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "axios": "^1.7.2",
+    "jotai": "^2.8.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-paginate": "^8.2.0",
     "react-scripts": "5.0.1",
+    "react-select": "^5.8.0",
+    "react-toastify": "^10.0.5",
+    "string_score": "^0.1.22",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -41,7 +47,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/string_score": "^0.1.31",
+    "miragejs": "^0.2.0-alpha.3"
   },
   "prettier": {
     "trailingComma": "es5",
