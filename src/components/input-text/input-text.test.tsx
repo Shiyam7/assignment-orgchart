@@ -1,8 +1,24 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import InputText from './index';
 
-test('renders Side bar component', () => {
-  render(<InputText label='search' onChange={(e) => console.log(e)} />);
-  const text = screen.getByText(/Input Text/i);
-  expect(text).toBeInTheDocument();
+describe('InputText Component', () => {
+  const mockOnChange = jest.fn();
+
+  beforeEach(() => {
+    render(<InputText label="Search" onChange={mockOnChange} />);
+  });
+
+  test('renders input element with placeholder', () => {
+    const inputElement = screen.getByPlaceholderText('Search');
+    expect(inputElement).toBeInTheDocument();
+  });
+
+  test('calls onChange handler on input change', () => {
+    const inputElement = screen.getByPlaceholderText('Search');
+    fireEvent.change(inputElement, { target: { value: 'test input' } });
+    expect(mockOnChange).toHaveBeenCalledTimes(1);
+    expect(mockOnChange).toHaveBeenCalledWith('test input');
+  });
 });
