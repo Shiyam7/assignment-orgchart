@@ -31,6 +31,7 @@ const CustomSelect = ({ options, onChange, TestId }: CustomSelectProps) => {
                         boxShadow: 'none',
                         backgroundColor: '#222831',
                         borderRadius: '35px',
+                        height: '3em'
                     }),
                     menu: (base, props) => ({
                         ...base,
