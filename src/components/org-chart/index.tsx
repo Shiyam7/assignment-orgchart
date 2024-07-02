@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import {  useDrop } from 'react-dnd'
 import {
     DefaultProps,
@@ -21,6 +21,15 @@ const OrgChart = ({ tree, onUpdate }: OrgChartProps) => {
     const treeHeight = findTreeHeight([tree])
 
     const ref = useRef(null)
+    
+    useEffect(() => {
+        const leaf = document.getElementById('root_leaf');
+        leaf?.scrollIntoView({
+            behavior: 'smooth',
+            inline: 'end',
+            block: 'end'
+        })
+    }, [tree])
 
     const [{  canDrop }, drop] = useDrop({
         accept: 'e-card',
@@ -44,12 +53,13 @@ const OrgChart = ({ tree, onUpdate }: OrgChartProps) => {
             className="org-chart"
             style={{
                 width: `${300 * 2 * treeWidth}px`,
-                height: `${120 * 1 * treeHeight}px`,
+                height: `${120* 1 * treeHeight}px`,
+                maxHeight: '100dvh'
             }}
         >
             <ul className="root">
                 <li className="root-node" key={`emp_sub_${tree.id}_${0}`}>
-                    <div className={canDrop ? "leaf can-drop" : "leaf"}  ref={ref}>
+                    <div className={canDrop ? "leaf can-drop" : "leaf"}  ref={ref} id={"root_leaf"}>
                         <EmployeeCard employee={tree} />
                     </div>
                     {tree.subordinates?.length ? (
