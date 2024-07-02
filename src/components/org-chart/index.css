@@ -6,6 +6,10 @@
     display: inline-block;
   }
 
+  .org-chart .employee-card {
+    background-color: rgba(34,40 ,49, 0.4);
+  }
+
   .org-chart .leaf.can-drop {
     display: inline-block;
     border: 2px solid lime;
