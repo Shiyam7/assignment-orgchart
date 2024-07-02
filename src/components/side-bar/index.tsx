@@ -23,9 +23,11 @@ const SideBar: React.FC<SideBarProps> = (props) => {
 
     return (
     <div className='side-bar'>
+        <div className='filters'>
+            <CustomSelect options={options} onChange={teamHandler} />
+            <InputText label='search' onChange={searchTextHandler}/>
+        </div>
         
-        <CustomSelect options={options} onChange={teamHandler} />
-        <InputText label='search' onChange={searchTextHandler}/>
         
         {
             !isLoading && <PaginatedItems itemsPerPage={5} items={filterdData.length > 0 ? filterdData : data} />

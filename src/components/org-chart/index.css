@@ -9,6 +9,7 @@
   .org-chart .leaf.can-drop {
     display: inline-block;
     border: 2px solid lime;
+    border-radius: 50px;
   }
 
 
