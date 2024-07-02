@@ -13,7 +13,7 @@ const MainCanvas: React.FC<MainCanvasProps> = (props) => {
         updateManger(emp, newManager)
     }
     return (
-        <div className='main-canvas'>
+        <div className='main-canvas' data-testid={props.TestId}>
             {relation && <OrgChart tree={relation} onUpdate={handlerUpdateManager} />}
         </div>
     )

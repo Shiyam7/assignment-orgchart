@@ -10,10 +10,10 @@ import MainCanvas from './components/main-canvas';
 function App() {
   return (
    <div className='container'>
-      <NavBar title='Org Chart'/>
+      <NavBar title='Org Chart' TestId='nav-bar'/>
       <main>
-        <SideBar/>
-        <MainCanvas/>
+        <SideBar TestId='side-bar'/>
+        <MainCanvas TestId='man-canvas'/>
       </main>
       <ToastContainer position='top-right' />
    </div>
