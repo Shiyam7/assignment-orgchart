@@ -4,12 +4,13 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
+    gap: var(--space);
 }
 
 .paginate {
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
 }

@@ -34,7 +34,8 @@ const NodeRender = ({
         }),
         end(_, monitor) {
             const dropTarget = monitor.getDropResult();
-            onUpdate(item, dropTarget as Employee);
+            if(dropTarget)
+                onUpdate(item, dropTarget as Employee);
         },
         
     }))
