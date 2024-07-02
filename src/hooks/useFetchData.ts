@@ -25,7 +25,10 @@ const useFectchData = () => {
     return {
         isLoading,
         data,
-        error
+        error,
+        mutate: {
+            setData
+        }
     };
 }
 

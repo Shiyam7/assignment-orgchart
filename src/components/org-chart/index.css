@@ -6,6 +6,12 @@
     display: inline-block;
   }
 
+  .org-chart .leaf.can-drop {
+    display: inline-block;
+    border: 2px solid lime;
+  }
+
+
   .org-chart .root li.root-node {
     display: inline-block;
   }

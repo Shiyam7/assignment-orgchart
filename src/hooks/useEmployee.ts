@@ -15,6 +15,9 @@ import {
     buildEmployeeTree,
     findEmployee,
 } from '../utils'
+import { toast } from 'react-toastify'
+import API from '../services/api'
+import { AxiosResponse } from 'axios'
 
 const useEmployee = () => {
     const [searchText, setSearchText] = useAtom(searchAtom)
@@ -25,7 +28,7 @@ const useEmployee = () => {
 
     const [options, setOptions] = useState<Option[]>([])
 
-    const { isLoading, data, error } = useFectchData()
+    const { isLoading, data, error, mutate: { setData} } = useFectchData()
 
     useEffect(() => {
         if (data.length > 0) {
@@ -82,6 +85,27 @@ const useEmployee = () => {
         }
     }, [searchText, selectedTeam, data, setFilteredData])
 
+    const updateManger = (employee: Employee, newManager: Employee) => {
+        const copy = [...data];
+        employee.manager = newManager.id;
+        const idx = copy.findIndex((val, index) => val.id === employee.id);
+        copy[idx] = {...employee};
+        setData(copy);
+
+        API
+        .updateManger(employee.id, newManager)
+        .then((res: AxiosResponse) => {
+            if(res.status === 200)
+                toast.info('Data updated')
+            else{
+                toast.error('Something went wrong when updating');
+                console.error(res.statusText);
+            }
+        })
+        
+        
+    }
+
     return {
         isLoading,
         error,
@@ -98,6 +122,7 @@ const useEmployee = () => {
             setSearchText,
             setSelctedTeam,
             setSelectedEmployee,
+            updateManger
         },
     }
 }
